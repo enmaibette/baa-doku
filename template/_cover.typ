@@ -1,38 +1,51 @@
-#align(top + right)[
-  #image("./images/HSLU_2022_log.png", width: 30%)
-]
+
 
 #let cover(
   title: none,
   subtitle: none,
   authors: (),
   university: none,
+  division: none,
   degree_program_full: none,
   report_date: none,
 ) = {
-  align(horizon + center)[
+  align(top + left, image("/template/images/HSLU_Logo_DE_Schwarz_cmyk.svg", width: 28%))
+  align(top + center)[
+    #v(80pt)
+    #text(size: 12pt, division)
 
-    #text(size: 24pt, [#title])\
+    #v(4pt)
+    #text(size: 12pt, university)
 
-    #v(0.5em)
+    #v(24pt)
 
-    #subtitle
-
-    #v(2em)
-
-
-    #let count = authors.len()
-    #let ncols = calc.min(count, 3)
-
-    #let author_title = "Author"
-    #if (count > 1) {
-      author_title = author_title + "s"
+    #text(size: 28pt, weight: 700, title)
+    #v(8pt)
+    #if subtitle != none {
+      text(size: 14pt, subtitle)
+      v(18pt)
     }
 
-    *#author_title*
+    #text(size: 16pt, weight: 600, "Bachelorarbeit")
+    #v(8pt)
+
+    #text(
+      size: 11pt,
+      "vorgelegt am Department "
+        + division
+        + " der "
+        + university
+        + " in Anbetracht zur Erreichung des akademischen Grades Bachelor im Studiengang "
+        + degree_program_full,
+    )
+    #v(24pt)
+
+    *von*
+    #let count = authors.len()
+    #let ncols = calc.min(count, 3)
     #grid(
       columns: (1fr,) * ncols,
-      row-gutter: 24pt,
+      row-gutter: 12pt,
       ..authors.map(author => [
         #author.name \
         #author.address \
@@ -40,13 +53,9 @@
       ]),
     )
 
-    #v(3em)
-
-    #university\
-    #degree_program_full
-
-    #v(2em)
-
-    #report_date.display("[month repr:long] [day], [year]")
+    #v(20pt)
+    #text(size: 12pt, degree_program_full)
+    #v(8pt)
+    #report_date.display("[day]. [month repr:long] [year]")
   ]
 }

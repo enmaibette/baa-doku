@@ -1,6 +1,6 @@
-#import "@preview/acrostiche:0.5.0": acr
+#import "@preview/acrostiche:0.6.0": acr
 
 #let abstract(abstract_content: none) = {
-  [= Abstract]
+  [= Zusammenfassung]
   abstract_content
 }

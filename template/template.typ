@@ -1,4 +1,4 @@
-#import "@preview/acrostiche:0.5.0": print-index, reset-all-acronyms
+#import "@preview/acrostiche:0.6.0": print-index, reset-all-acronyms
 #import "_cover.typ": cover
 #import "_declaration.typ": declaration
 #import "_expression.typ": expression
@@ -37,7 +37,7 @@
   set text(
     font: "Times New Roman",
     size: 12pt,
-    lang: "en",
+    lang: "de",
   )
 
   // All paragraphs are justified
@@ -126,7 +126,7 @@
         columns: 2,
         column-gutter: 4pt,
         align(top)[
-          #c.supplement #context(c.counter.display(c.numbering)).#c.separator],
+          #c.supplement #context (c.counter.display(c.numbering)).#c.separator],
         align(left, c.body),
       )
     }
@@ -140,6 +140,7 @@
       subtitle: subtitle,
       authors: authors,
       university: university,
+      division: division,
       degree_program_full: degree_program_full,
       report_date: report_date,
     )
@@ -215,19 +216,19 @@
   // Reset the page and heading counter
   counter(page).update(1)
   counter(heading).update(0)
-  set heading(numbering: "1.1   ", supplement: "Chapter")
+  set heading(numbering: "1.1   ", supplement: "Kapitel")
 
   doc
 
   // Set the heading numbering to roman for the appendices and reset the heading counter
-  set heading(numbering: "A.1   ", supplement: "Chapter")
+  set heading(numbering: "A.1   ", supplement: "Kapitel")
   counter(heading).update(0)
 
   set figure(outlined: false, numbering: "A.1")
 
   reset-all-acronyms()
   print-index(
-    title: "List of Abbreviations",
+    title: "Verzeichnis der Abkürzungen",
     numbering: "A.1 ",
     outlined: true,
     used-only: true,
@@ -242,17 +243,17 @@
   )
 
   outline(
-    title: "List of Figures",
+    title: "Abbildungsverzeichnis",
     target: figure.where(kind: image),
   )
 
   outline(
-    title: "List of Tables",
+    title: "Tabellenverzeichnis",
     target: figure.where(kind: table),
   )
 
   outline(
-    title: "List of Equations",
+    title: "Formelverzeichnis",
     target: figure.where(kind: math.equation),
   )
 

@@ -4,4 +4,10 @@
 		"editor.wordWrapColumn": 120,
 		"editor.formatOnSave": true
 	},
+	"cSpell.enabled": true,
+	"cSpell.language": "de-DE,en-US",
+	"cSpell.enabledLanguageIds": ["markdown", "plaintext", "latex", "typst"],
+	"cSpell.diagnosticLevel": "Hint",
+	"ltex.language": "de-DE",
+	"ltex.enabled": false,
 }

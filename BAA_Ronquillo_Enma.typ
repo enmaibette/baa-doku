@@ -1,16 +1,16 @@
-#import "@preview/codly:1.1.1": *
-#import "@preview/codly-languages:0.1.3": *
+//#import "@preview/codly:1.1.1": *
+//#import "@preview/codly-languages:0.1.3": *
 
 // Init codly. If live preview stops working, remove this block until the final generation of the report
-#show: codly-init.with()
-#codly(languages: codly-languages)
+//#show: codly-init.with()
+//#codly(languages: codly-languages)
 
 // Import the glossary
 #include "_glossary.typ"
 
 #import "/template/template.typ": template
 
-#let report_date = datetime(year: 2025, month: 1, day: 1)
+#let report_date = datetime(year: 2026, month: 1, day: 1)
 // If you want to have different dates for report, graduation and/or signature, change them here
 #let signature_date = report_date
 // Only the year is displayed for the graduation date
@@ -25,28 +25,28 @@
 ]
 
 #show: template.with(
-  title: "This is a title of a thesis",
+  title: "Webbasierte Lernumgebung für OOP in Python",
   subtitle: "This is a subtitle of a thesis",
   // You MUST keep a trailing Scomma here, even if there is only one author
   authors: (
     (
-      name: "Lastname Firstname",
+      name: "Ronquillo Enma",
       address: "Suurstoffi 1, 6343 Risch-Rotkreuz",
-      email: "firstname.lastname@stud.hslu.ch",
+      email: "enma.ronquillocelis@stud.hslu.ch",
     ),
   ),
-  university: "Lucerne University of Applied Sciences and Arts",
-  division: "School of Computer Science and Information Technology",
+  university: "Hochschule Luzern (Schweiz)",
+  division: "Informatik",
   report_date: report_date,
-  advisor: "Prof. Dr. Advisor",
+  advisor: "Silvan Wegmann",
   external_expert: "Dr. External Expert",
-  industry_partner: [Industry AG\ Some Person\ Somestreet 69\ 4269 Nice],
-  degree_program: "BSc AI & ML",
-  degree_program_full: "Bachelor of Science in Artificial Intelligence & Machine Learning",
+  industry_partner: [HSLU\ Suurstoffi 1\ 6343 Risch-Rotkreuz],
+  degree_program: "BSc Informatik",
+  degree_program_full: "Bachelor in Informatik",
   graduation_date: graduation_date,
-  confidential: true,
+  confidential: false,
   signature_date: signature_date,
-  signature_place: "Risch-Rotkreuz",
+  signature_place: "TODOOOO",
   expression_content: expression_content,
   abstract_content: abstract_content,
   bibliography_link: "/BAA.bib",

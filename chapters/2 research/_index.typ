@@ -1,4 +1,4 @@
-#import "@preview/acrostiche:0.5.0": acr, acrfull
+#import "@preview/acrostiche:0.6.0": acr, acrfull
 #import "/template/_helpers.typ": title-caption
 
 = State of the Art in Research
@@ -7,10 +7,7 @@ As you can see, figure numbers are automatically generated according to the chap
 #figure(
   table(
     columns: 2,
-    table.header(
-      [Header 1],
-      [Header 2],
-    ),
+    table.header([Header 1], [Header 2]),
 
     [Row 1, Column 1], [Row 1, Column 2],
   ),

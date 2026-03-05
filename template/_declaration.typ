@@ -13,11 +13,11 @@
   university: none,
   division: none,
 ) = {
-  [== Bachelor Thesis at #university #division]
+  [== Bachelorarbeit an der #university - #division]
 
-  let name_of_student = "Name of Student"
-  if (authors.len() > 0) {
-    name_of_student = name_of_student + "s"
+  let name_of_student = "Studierende"
+  if (authors.len() > 1) {
+    name_of_student = "Studierenden"
   }
 
   table(
@@ -25,31 +25,31 @@
     stroke: none,
     row-gutter: 1em,
     column-gutter: 2em,
-    [*Title of Bachelor Thesis:*], [#title],
-    [*#name_of_student:*], [#authors.map(a => a.name).join(" \ ")],
-    [*Degree Program:*], [#degree_program],
-    [*Year of Graduation:*], [#graduation_date.display("[year]")],
-    [*Main Advisor:*], [#advisor],
-    [*External Expert:*], [#external_expert],
-    [*Industry partner/provider:*], [#industry_partner],
+    [*Titel:*], [#title],
+    [*#name_of_student:*], [#authors.map(a => a.name).join(" \\")],
+    [*Studiengang:*], [#degree_program],
+    [*Abschlussjahr:*], [#graduation_date.display("[year]")],
+    [*Betreuungsperson:*], [#advisor],
+    [*Expertenperson:*], [#external_expert],
+    [*Auftragsgebende:*], [#industry_partner],
   )
-
+  v(1em)
   [
-    *Code / Thesis Classification:*\
+    *Codierung / Klassifizierung der Arbeit:*\
     #if (confidential) {
       [
-        ⬜ Public (Standard)\
-        ☑ Confidential (Restricted)
+        ⬜ Öffentlich (Normalfall)\
+        ☑ Vertraulich
       ]
     } else {
       [
-        ☑ Public (Standard)\
-        ⬜ Confidential (Restricted)
+        ☑ Öffentlich (Normalfall)\
+        ⬜ Vertraulich
       ]
     }
-
-    *Declaration*\
-    I hereby declare that I have completed this thesis alone and without any unauthorized or external help. I further declare that all the sources, references, literature and any other associated resources have been correctly and appropriately cited and referenced. The confidentiality of the project provider (industry partner) as well as the intellectual property rights of the Lucerne University of Applied Sciences and Arts have been fully and entirely respected in completion of this thesis.
+    #v(1em)
+    *Eidesstattliche Erklärung*\
+    Ich erkläre hiermit, dass ich die vorliegende Arbeit selbständig und ohne unerlaubte fremde Hilfe angefertigt habe. Alle verwendeten Quellen, Literatur und Hilfsmittel (insbesondere künstliche Intelligenz oder sonstige verwendete Instrumente) wurden urheberrechts- und datenschutzkonform verwendet und wörtlich oder inhaltlich entnommene Stellen als solche kenntlich gemacht. Das Ver-traulichkeitsinteresse des Auftraggebers wurde gewahrt und die Urheberrechtsbestimmungen der Hochschule Luzern respektiert.
 
     #stack(
       grid(align: bottom + center, columns: (1fr, 1fr))[
@@ -62,12 +62,12 @@
       ],
       spacing: .5em,
       line(length: 100%, stroke: (thickness: .5pt)),
-      "Place / Date, Signature",
+      "Ort / Datum, Unterschrift",
     )
-
-    *Submission of the Thesis to the Portfolio Database:*\
-    Confirmation by the student\
-    I hereby confirm that this bachelor thesis has been correctly uploaded to the Portfolio Database in line with the code of practice of the University. I rescind all responsibility and authorization after upload so that no changes or amendments to the document may be undertaken.
+    #v(1em)
+    *Einreichung der Arbeit in die Portfoliodatenbank:*\
+    Bestätigung durch die Studierenden\
+    Ich bestätige hiermit, dass diese Bachelorarbeit gemäß den Vorgaben korrekt in die Portfoliodatenbank hochgeladen wurde. Nach dem Upload entziehe ich mich der Verantwortung für Änderungen am Dokument.
 
     #stack(
       grid(align: bottom + center, columns: (1fr, 1fr))[
@@ -80,7 +80,7 @@
       ],
       spacing: .5em,
       line(length: 100%, stroke: (thickness: .5pt)),
-      "Place / Date, Signature",
+      "Ort / Datum, Unterschrift",
     )
   ]
 }

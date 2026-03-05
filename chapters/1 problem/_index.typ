@@ -1,5 +1,5 @@
 #import "/template/_helpers.typ": title-caption
-#import "@preview/acrostiche:0.5.0": acr, acrfull
+#import "@preview/acrostiche:0.6.0": acr, acrfull
 
 = Problem, Research Question, Vision
 
@@ -39,10 +39,7 @@ I wouldn't recommend going deeper than this.
 #figure(
   table(
     columns: 2,
-    table.header(
-      [Header 1],
-      [Header 2],
-    ),
+    table.header([Header 1], [Header 2]),
 
     [Row 1, Column 1], [Row 1, Column 2],
   ),
@@ -54,6 +51,6 @@ I wouldn't recommend going deeper than this.
 
 #figure(
   kind: math.equation,
-  $ R^2 = 1 - frac(\SS_(R E S), \SS_(T O T)) = 1 - frac(sum_i (y-hat(y)_i)^2,sum_i (y-macron(y)_i)^2) $,
+  $ R^2 = 1 - frac(\SS_(R E S), \SS_(T O T)) = 1 - frac(sum_i (y-hat(y)_i)^2, sum_i (y-macron(y)_i)^2) $,
   caption: "This is an equation title",
 )
