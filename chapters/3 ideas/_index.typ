@@ -1,4 +1,4 @@
 #import "/template/_helpers.typ": todo
 
-= Ideas and Concepts
+= Ideen und Konzepte
 #todo("I definitely need to write this chapter.")

@@ -1,4 +1,4 @@
-= Appendix
+= Anhänge
 == Used Tools<H:used_tools>
 
 During programming, the following tools were used:

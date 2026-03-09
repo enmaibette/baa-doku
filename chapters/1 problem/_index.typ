@@ -1,9 +1,9 @@
 #import "/template/_helpers.typ": title-caption
 #import "@preview/acrostiche:0.6.0": acr, acrfull
 
-= Problem, Research Question, Vision
+= Problem, Fragestellung, Vision
 
-This is a citation @AttentionIsAllYouNeed. #cite(<AttentionIsAllYouNeed>, form: "prose") also said, that this is an inline citation.
+This is a citation @geeksforgeeks2026_oop. #cite(<geeksforgeeks2026_oop>, form: "prose") also said, that this is an inline citation.
 
 You can also link to headings @H:used_tools or @H:method, to tables @T:table and so on.
 
